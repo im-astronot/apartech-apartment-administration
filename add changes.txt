@@ -1,0 +1,38 @@
+Things to do
+
+add price and purchase date in purchase [DONE]
+
+----------------------------------------------------------------------
+insert purchase jdbc and add 2 columns in purchase table
+purchase view table query
+select flat_num, block_name, floor_num, area_sqft, ap_bhk, ap_name, ap_contact, ap_price, to_char(ap_date, 'DD-MON-YYYY') purchase_date, ap_status from purchase;
+
+----------------------------------------------------------------------
+sort residential table
+flat_num | block_name | park_num | rname | rcontact | r_status
+residential view table query
+select flat_num, block_name, park_num, r_name, r_contact, status from residential;
+----------------------------------------------------------------------
+change date format in emp table for dob and hiredate
+select emp_id, emp_name, to_char(dob, 'DD-MON-YYYY') emp_dob, to_char(hiredate, 'DD-MON-YYYY') emp_hiredate, job, salary from employee;
+----------------------------------------------------------------------
+daily entry sort records according to date range
+select * from dentry where d_date >= '19-OCT-2021' and d_date <= '22-OCT-2021';
+
+----------------------------------------------------------------------
+dailt entry change the date format
+select sl_num, d_name, d_contact, to_char(d_date, 'DD-MON-YYYY') dentry_date, purpose, from_loc, flat_num, emp_id from dentry;
+----------------------------------------------------------------------
+complaint view change button name to update status
+
+----------------------------------------------------------------------
+complaint sort records according to date range
+select * from complaint where cp_date >= '12-AUG-2021' and cp_date <= '22-SEP-2021';
+
+----------------------------------------------------------------------
+change format for all the calendar used to DD-MON-YYYY
+
+
+select count(ap_status) from purchase where ap_status = 'SOLD';
+select count(nvl(ap_status, 0)) from purchase where ap_status is null;
+
